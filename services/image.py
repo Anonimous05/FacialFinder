@@ -7,13 +7,23 @@ from config import DATASETS_ROOT
 
 class ImageDetection:
 
-    def __init__(self, path: str, scale_factor: float, min_neighbors: int,
-                 rect_color: tuple = (255, 0, 0), text: str = None, text_color: tuple = (255, 0, 0),
-                 show_title: str = 'Result of detection', delay: int = 0, output_path: str = None):
+    def __init__(self,
+                 path: str,
+                 scale_factor: float,
+                 min_neighbors: int,
+
+                 rect_color: tuple = (255, 0, 0),
+                 text: str = None,
+                 text_color: tuple = (255, 0, 0),
+                 show_title: str = 'Result of detection',
+                 delay: int = 0,
+                 output_path: str = None
+                 ):
         """
-        :param path: path to file (.png, .jpeg, .jpg, ...)
-        :param scale_factor: (Read the OpenCV docs)
-        :param min_neighbors: (Read the OpenCV docs)
+        :param path: path to file (.png, .jpeg, .jpg, ...) REQUIRED
+        :param scale_factor: (Read the OpenCV docs) REQUIRED
+        :param min_neighbors: (Read the OpenCV docs) REQUIRED
+
         :param rect_color: color of rectangle (detected objects) must be tuple (B, G, R)
         :param text: title of detected objects
         :param text_color: color of text (detected objects) must be tuple (B, G, R)
@@ -83,7 +93,7 @@ class ImageDetection:
         PS: every method of this class have comments!!!
         """
         if self.output_path is None:
-            raise AttributeError('instance.output_path required')
+            raise AttributeError('instance.output_path is required')
 
         self._detect()
         self._draw_detected_objects()

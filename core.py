@@ -1,7 +1,7 @@
 import os
 
 from config import STATIC_ROOT, IMAGES_ROOT, VIDEOS_ROOT
-from services import ImageDetection
+from services import ImageDetection, VideoDetection
 
 
 """
@@ -23,4 +23,21 @@ my_img.detect()
 
 """
     Example of VideoDetection
+    src: you may set index of camera, example - 0 (WEB Camera), 1 - second Camera ...
 """
+
+my_video = VideoDetection(
+    src=os.path.join(VIDEOS_ROOT, 'vid.mp4'),
+    scale_factor=1.15,
+    min_neighbors=6,
+
+    rect_color=(0, 0, 0),
+    rect_thickness=-1,
+    text_color=(0, 255, 0),
+    text='Face',
+    delay=1,
+    output_path=os.path.join(STATIC_ROOT, 'examples/detected_faces.avi')
+)
+
+my_video.detect()
+
