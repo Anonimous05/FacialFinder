@@ -21,18 +21,18 @@ class ImageDetection:
         :param delay: cv2.waitKey(delay)
         :param output_path: if you call .detect() method, you must set result file path
         """
-        self.path = path
-        self.scale_factor = scale_factor
-        self.min_neighbors = min_neighbors
-        self.rect_color = rect_color
-        self.text = text
-        self.text_color = text_color
-        self.show_title = show_title
-        self.delay = delay
-        self.output_path = output_path
-        self.original_file = None
-        self.prepared_file = None
-        self.count = 0
+        self.path: str = path
+        self.scale_factor: float = scale_factor
+        self.min_neighbors: int = min_neighbors
+        self.rect_color: tuple = rect_color
+        self.text: str = text
+        self.text_color: tuple = text_color
+        self.show_title: str = show_title
+        self.delay: int = delay
+        self.output_path: str = output_path
+        self.original_file: cv2.typing.MatLike = None
+        self.prepared_file: cv2.typing.MatLike = None
+        self.count: int = 0
 
         self._prepare_file()
 
@@ -75,7 +75,7 @@ class ImageDetection:
         cv2.imshow(self.show_title, self.original_file)
         cv2.waitKey(self.delay)
 
-    def detect(self):
+    def detect(self) -> str:
         """
         Detect objects and save the instance.output_path file
         :return: path to detected file

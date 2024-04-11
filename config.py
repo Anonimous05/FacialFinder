@@ -1,9 +1,9 @@
 import os
 
-CORE_DIR = os.getcwd()
+CORE_DIR: str = os.getcwd()
 
-DATASETS_ROOT = os.path.join(CORE_DIR, 'datasets')
+DATASETS_ROOT: str = os.path.join(CORE_DIR, 'datasets')
 
-STATIC_ROOT = os.path.join(CORE_DIR, 'static')
-IMAGES_ROOT = os.path.join(STATIC_ROOT, 'images')
-VIDEOS_ROOT = os.path.join(STATIC_ROOT, 'videos')
+STATIC_ROOT: str = os.path.join(CORE_DIR, 'static')
+IMAGES_ROOT: str = os.path.join(STATIC_ROOT, 'images')
+VIDEOS_ROOT: str = os.path.join(STATIC_ROOT, 'videos')
