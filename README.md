@@ -32,7 +32,7 @@
 <b>rect_color</b> color of rectangle (detected objects) must be tuple (B, G, R)
 </li>
 <li>
-<b>text</b> title of detected objects
+<b>text</b>: title of detected objects
 </li>
 <li>
 <b>text_color</b> color of text (detected objects) must be tuple (B, G, R)
@@ -82,7 +82,7 @@
 <b>rect_thickness</b> : rectangle thickness must be integer
 </li>
 <li>
-<b>text</b> title of detected objects
+<b>text</b>: title of detected objects
 </li>
 <li>
 <b>text_color</b> color of text (detected objects) must be tuple (B, G, R)
