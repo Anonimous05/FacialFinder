@@ -27,15 +27,16 @@ my_img.detect()
 """
 
 my_video = VideoDetection(
-    src=os.path.join(VIDEOS_ROOT, 'vid.mp4'),
-    scale_factor=1.15,
-    min_neighbors=6,
+    src=0,
+    scale_factor=1.2,
+    min_neighbors=5,
 
     rect_color=(0, 0, 0),
-    rect_thickness=-1,
+    rect_thickness=1,
     text_color=(0, 255, 0),
     text='Face',
     delay=1,
+    fourcc='MJPG',
     output_path=os.path.join(STATIC_ROOT, 'examples/detected_faces.avi')
 )
 

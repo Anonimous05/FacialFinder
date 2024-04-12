@@ -26,16 +26,16 @@
 <b>scale_factor</b>: (Read the OpenCV docs) <i>REQUIRED</i>
 </li>
 <li>
-<b>min_neighbors</b> (Read the OpenCV docs) <i>REQUIRED</i>
+<b>min_neighbors</b>: (Read the OpenCV docs) <i>REQUIRED</i>
 </li>
 <li>
-<b>rect_color</b> color of rectangle (detected objects) must be tuple (B, G, R)
+<b>rect_color</b>: color of rectangle (detected objects) must be tuple (B, G, R)
 </li>
 <li>
 <b>text</b>: title of detected objects
 </li>
 <li>
-<b>text_color</b> color of text (detected objects) must be tuple (B, G, R)
+<b>text_color</b>: color of text (detected objects) must be tuple (B, G, R)
 </li>
 <li>
 <b>show_title</b>: title of detected objects window
@@ -73,25 +73,28 @@
 <b>scale_factor</b>: (Read the OpenCV docs) <i>REQUIRED</i>
 </li>
 <li>
-<b>min_neighbors</b> (Read the OpenCV docs) <i>REQUIRED</i>
+<b>min_neighbors</b>: (Read the OpenCV docs) <i>REQUIRED</i>
 </li>
 <li>
-<b>rect_color</b> color of rectangle (detected objects) must be tuple (B, G, R)
+<b>rect_color</b>: color of rectangle (detected objects) must be tuple (B, G, R)
 </li>
 <li>
-<b>rect_thickness</b> : rectangle thickness must be integer
+<b>rect_thickness</b>: rectangle thickness must be integer
 </li>
 <li>
 <b>text</b>: title of detected objects
 </li>
 <li>
-<b>text_color</b> color of text (detected objects) must be tuple (B, G, R)
+<b>text_color</b>: color of text (detected objects) must be tuple (B, G, R)
 </li>
 <li>
 <b>show_title</b>: title of detected objects window
 </li>
 <li>
 <b>delay</b>: cv2.waitKey(delay)
+</li>
+<li>
+<b>fourcc</b>: format of saving video with detected objects, default=mp4v for .mp4 files<br>use with cv2.VideoWriter (PS: read the OpenCV docs)
 </li>
 <li>
 <b>output_path</b>: if you call .detect() method, you must set result file path

@@ -1,6 +1,7 @@
 import os
 
 import cv2
+from progressbar import ProgressBar
 
 from config import DATASETS_ROOT
 
@@ -18,6 +19,7 @@ class VideoDetection:
                  text_color: tuple = (255, 0, 0),
                  show_title: str = 'Result of detection',
                  delay: int = 1,
+                 fourcc: str = 'mp4v',
                  output_path: str = None
                  ):
         """
@@ -43,6 +45,7 @@ class VideoDetection:
         self.text_color: tuple = text_color
         self.show_title: str = show_title
         self.delay: int = delay
+        self.fourcc: str = fourcc
         self.output_path: str = output_path
 
         self.capture: cv2.VideoCapture = None
@@ -64,7 +67,7 @@ class VideoDetection:
         self.size = (self.capture.get(3).__int__(), self.capture.get(4).__int__())
         frames = self.capture.get(cv2.CAP_PROP_FRAME_COUNT)
         fps = self.capture.get(cv2.CAP_PROP_FPS)
-        self.duration = round(frames / fps)
+        self.duration = frames / fps
 
     def _detect(self):
         """
@@ -96,28 +99,30 @@ class VideoDetection:
         Show detection of video or camera
         Click 'Q' for close Result Window
         """
-        out = None
+        out, bar = None, None
         if write:
-            out = cv2.VideoWriter(self.output_path, cv2.VideoWriter_fourcc(*'MJPG'), 20.0, self.size)
+            if self.output_path is None:
+                raise AttributeError('instance.output_path is required')
+
+            out = cv2.VideoWriter(self.output_path, cv2.VideoWriter_fourcc(*self.fourcc), 20.0, self.size)
+            # progressbar for saving detection
+            bar = ProgressBar(max_value=100, prefix='Detection')
 
         while self.capture.isOpened():
+            if write and type(self.src) == str:
+                current_msc = "%.2f" % (self.capture.get(cv2.CAP_PROP_POS_MSEC) / 1000)
+                bar.update(round((float(current_msc) / self.duration) * 100))
+
             success, self.original_video = self.capture.read()
             self.prepared_video = cv2.cvtColor(self.original_video, cv2.COLOR_BGR2GRAY)
 
             self._detect()
             self._draw_detected_objects()
 
-            if write:
-                print(
-                    f'\rDuration: {self.duration} Detected duration: '
-                    f'{round(self.capture.get(cv2.CAP_PROP_POS_MSEC) / 1000)}',
-                    end='')
-                if self.output_path is None:
-                    raise AttributeError('instance.output_path is required')
+            if write & success:
+                out.write(self.original_video)
 
-                if success:
-                    out.write(self.original_video)
-            else:
+            if write and type(self.src) == int or not write:
                 cv2.imshow(self.show_title, self.original_video)
 
             if cv2.waitKey(self.delay) & 0xFF == ord('q'):
@@ -129,11 +134,11 @@ class VideoDetection:
     def show(self):
         try:
             self._show()
-        except:
+        except (KeyboardInterrupt, cv2.error) as error:
             pass
 
     def detect(self):
         try:
             self._show(write=True)
-        except:
+        except (KeyboardInterrupt, cv2.error) as error:
             pass
