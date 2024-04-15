@@ -1,6 +1,6 @@
 <p align="center">
     <kbd>
-        <img style="border-radius: 5px; height: 200px" src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/logo/200x200.png" alt="logo">
+        <img style="border-radius: 5px" height="200" src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/logo/200x200.png" alt="logo">
     </kbd>
     <h1 style="margin: 0" align="center">FacialFinder with OpenCV</h1>
     <h4 style="margin: 0" align="center">Very simple tool for face detection on Image or Video</h4>
