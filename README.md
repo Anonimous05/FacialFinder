@@ -113,9 +113,9 @@
 <ul>
 <li><b>.detect()</b></li>
 <li><b>Before Face Detection image</b></li>
-<img src="static/examples/img.png" alt="" width="600"/>
+<img src="https://raw.githubusercontent.com/Anonimous05/FaceDetection/main/static/examples/img.png" alt="" width="600"/>
 <li><b>After Face Detection image</b></li>
-<img src="static/examples/detected_faces.png" alt="" width="600">
+<img src="https://raw.githubusercontent.com/Anonimous05/FaceDetection/main/static/examples/detected_faces.png" alt="" width="600">
 </ul>
 </li>
 <li>
@@ -123,9 +123,9 @@
 <ul>
 <li><b>.detect()</b></li>
 <li><b>Before Face Detection video</b></li>
-<img src="static/examples/vid.gif" alt="" width="600"/>
+<img src="https://raw.githubusercontent.com/Anonimous05/FaceDetection/main/static/examples/vid.gif" alt="" width="600"/>
 <li><b>After Face Detection video</b></li>
-<img src="static/examples/detected_faces.gif" alt="" width="600"/>
+<img src="https://raw.githubusercontent.com/Anonimous05/FaceDetection/main/static/examples/detected_faces.gif" alt="" width="600"/>
 </ul>
 </li>
 </ul>
