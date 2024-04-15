@@ -9,7 +9,7 @@ long_description = (core_dir / "README.md").read_text()
 
 setup(
     name="facialfinder",
-    version="0.0.4",
+    version="0.0.5",
     url="https://github.com/Anonimous05/FacialFinder",
     author="Airas Tolonov",
     author_email="airastolonov05@gmail.com",
