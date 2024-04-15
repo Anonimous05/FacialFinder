@@ -1,5 +1,10 @@
-<center><h1>Face Detection with OpenCV</h1></center>
-<center><h4>Very simple tool for face detection on Image or Video</h4></center>
+<p align="center">
+    <kbd>
+        <img style="border-radius: 5px; height: 200px" src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/logo/200x200.png" alt="logo">
+    </kbd>
+    <h1 style="margin: 0" align="center">FacialFinder with OpenCV</h1>
+    <h4 style="margin: 0" align="center">Very simple tool for face detection on Image or Video</h4>
+</p>
 <h2>Services</h2>
 <ul> 
 <li>
@@ -113,9 +118,9 @@
 <ul>
 <li><b>.detect()</b></li>
 <li><b>Before Face Detection image</b></li>
-<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/examples/static/examples/img.png" alt="" width="600"/>
+<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/examples/img.png" alt="" width="600"/>
 <li><b>After Face Detection image</b></li>
-<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/examples/static/examples/detected_faces.png" alt="" width="600">
+<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/examples/detected_faces.png" alt="" width="600">
 </ul>
 </li>
 <li>
@@ -123,9 +128,9 @@
 <ul>
 <li><b>.detect()</b></li>
 <li><b>Before Face Detection video</b></li>
-<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/examples/static/examples/vid.gif" alt="" width="600"/>
+<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/examples/vid.gif" alt="" width="600"/>
 <li><b>After Face Detection video</b></li>
-<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/examples/static/examples/detected_faces.gif" alt="" width="600"/>
+<img src="https://raw.githubusercontent.com/Anonimous05/FacialFinder/static/static/examples/detected_faces.gif" alt="" width="600"/>
 </ul>
 </li>
 </ul>
